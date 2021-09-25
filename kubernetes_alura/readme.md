@@ -35,20 +35,16 @@ kubectl version --client
 ```
 
 
+### minikube:   
+#### Criar cluster Kubernetes com o Minikube:  
 
 ```bash
-minikube:
-
-
-Criar cluster Kubernetes com o Minikube:
-
-minikube start --vm-driver=virtualbox
+minikube start --vm-driver=virtualbox  
 
 ```
-
+### Verificar node criado:   
+  
 ```bash
-Verificar node criado:
-
 kubectl get nodes
 ```   
 
@@ -64,55 +60,53 @@ kubectl get nodes
 * Como possuem IP's diferentes, containers em pods diferentes podem utilizar o mesmo número de porta.  
 * Containers dentro de um mesmo pod conseguem se comunicar via localhost.
 
-#### Como criar um Pod?
+### Como criar um Pod?  
+#### Exemplo. Criação de um Pod com a imagem do Nginx:  
 
 
 ```bash
-Exemplo. Criação de um Pod com a imagem do Nginx:
-
 kubectl run nginx-server --image=nginx:latest
-```
+```  
 
+### Verficar Pods criado:   
 ```bash
-Verficar Pods criado:
-
 kubectl get pods
+```  
 
-ou para acompanhar todas as ocorrências:
-
-kubectl get pods --watch
-
-```
+### para acompanhar todas as ocorrências em execução:  
 
 ```bash
-Verificar os detalhes do Pod gerado:
+kubectl get pods --watch  
+```   
 
+### Verificar os detalhes do Pod gerado:  
+
+
+```bash
 kubectl describe pods <nome_do_pods>
-```
+```  
 
+### Atualizar a versão da imagem no Pod:   
+#### A saída do comando abrirá o Vim para editar de maneira declarativa   
+  
 ```bash
-Atualizar a versão da imagem no Pod:
-
 kubectl edit pod <nome-do-pod>
 
-A saída do comando abrirá o Vim para editar de maneira declarativa
 ```
 ### Pods declarivo
+###  Cria um arquivo yml como o presente neste projeto.
+### Informar as chaves e valores de acordo com a configuração desejada. Ao terminar, rodar o seguinte comando:  
 
 ```bash
-Cria um arquivo yml como o presente neste projeto.
-Informar as chaves e valores de acordo com a configuração desejada. Ao terminar, rodar o seguinte comando:  
-
 kubectl apply -f primeiro-pod.yml 
-
-Para verificar:
-
-kubectl describe pods primeiro-pod-declarivo
 ```
 
+### Para verificar:
 ```bash
-Acessar container dentro do Pod
-
+kubectl describe pods primeiro-pod-declarivo
+```
+### vAcessar container dentro do Pod  
+```bash
 kubectl exec -it portal-noticias -- bash
 ```   
 
