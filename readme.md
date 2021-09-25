@@ -139,10 +139,10 @@ obs: pressupõe que foi configurado o `label` e `app` no arquivo `pod-1.yaml`.
 Após a configuração: executar os comandos e teremos as respectivas saídas:   
 
 `kubectl get svc`  
-![image](./image/get-svc.png)   
+![image](/kubernetes_alura/image/get-svc.png)   
 
 `kubectl get node -o wide`  
-![image](./image/node-o_wide.png)
+![image](/kubernetes_alura/image/node-o_wide.png)
 
 Na primeira imagem iremos, buscamos a porta configurada no __NodePort__(o IP do Node). Na segunda, o endereço de IP do __MiniKube__. Teremos: `192.168.99.114:30000`  
 
